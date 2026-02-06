@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Sejal Suda ❤️</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Main Stylesheet (Inline) -->
+    <style>
+        /* Base Setup */
+        :root {
+            --primary-text: #1d1d1f;
+            /* Apple Near Black */
+            --secondary-text: #86868b;
+            /* Apple Gray */
+            --glass-bg: rgba(255, 255, 255, 0.65);
+            --glass-border: rgba(255, 255, 255, 0.4);
+            --accent-color: #0071e3;
+            /* Classic Apple Blue, will override per theme */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            height: 100vh;
+            overflow: hidden;
+            /* Prevent scrolling, we use SPA transitions */
+        }
+
+        /* Main Container */
+        .main-container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        section {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+            padding: 20px;
+            overflow: hidden;
+            /* Keep floating emojis inside */
+        }
+
+        .active-section {
+            opacity: 1;
+            z-index: 10;
+            pointer-events: all;
+            transform: scale(1);
+        }
+
+        .hidden-section {
+            opacity: 0;
+            z-index: 0;
+            pointer-events: none;
+            transform: scale(0.95);
+        }
+
+        /* Gradient Animation */
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Themes - Vibrant Mesh Gradients (Animated) */
+        .proposal-section {
+            background:
+                linear-gradient(135deg, rgba(255, 107, 157, 0.85) 0%, rgba(254, 197, 229, 0.85) 50%, rgba(255, 229, 236, 0.85) 100%),
+                url('valentine-bg.png');
+            background-size: 200% 200%, cover;
+            background-position: 0% 50%, center center;
+            background-repeat: no-repeat, no-repeat;
+            background-attachment: scroll, fixed;
+            animation: gradientShift 15s ease infinite;
+        }
+
+        /* Mobile optimization for proposal background */
+        @media (max-width: 768px) {
+            .proposal-section {
+                background-attachment: scroll, scroll;
+                background-size: 200% 200%, contain;
+                background-position: 0% 50%, center bottom;
+            }
+        }
+
+        .thank-you-theme {
+            background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);
+            background-size: 200% 200%;
+            animation: gradientShift 15s ease infinite;
+        }
+
+        .no-response-theme {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background-size: 200% 200%;
+            animation: gradientShift 15s ease infinite;
+        }
+
+        .rose-theme {
+            background: linear-gradient(120deg, #f6d365 0%, #fda085 50%, #ff6a88 100%);
+            background-size: 200% 200%;
+            animation: gradientShift 15s ease infinite;
+        }
+
+        .propose-theme {
+            background: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%);
+            background-size: 200% 200%;
+            animation: gradientShift 15s ease infinite;
+        }
+
+
+
+        .chocolate-theme {
+            background: linear-gradient(120deg, #f093fb 0%, #f5576c 50%, #ff4b7a 100%);
+            background-size: 200% 200%;
+            animation: gradientShift 15s ease infinite;
+        }
+
+        .teddy-theme {
+            background: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+            background-size: 200% 200%;
+            animation: gradientShift 15s ease infinite;
+        }
+
+        .promise-theme {
+            background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+            background-size: 200% 200%;
+            animation: gradientShift 15s ease infinite;
+        }
+
+        .hug-theme {
+            background: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
+            background-size: 200% 200%;
+            animation: gradientShift 15s ease infinite;
+        }
+
+        .kiss-theme {
+            background: linear-gradient(to top, #ff0844 0%, #ffb199 100%);
+            background-size: 200% 200%;
+            animation: gradientShift 15s ease infinite;
+        }
+
+        .valentine-theme {
+            background: radial-gradient(circle at 50% 50%, #ff4d6d 0%, #ff758c 50%, #ff9eb3 100%);
+            background-size: 200% 200%;
+            animation: gradientShift 15s ease infinite;
+            color: var(--primary-text);
+        }
+
+        /* Card Styling - Apple Glass */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.75);
+            /* Higher opacity for pop */
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            border-radius: 24px;
+            padding: 50px 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            /* Softer shadow */
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            width: 100%;
+            max-width: 480px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            z-index: 20;
+        }
+
+        /* Typography */
+        h1 {
+            font-family: inherit;
+            /* Inherit Inter */
+            font-size: 2.5rem;
+            letter-spacing: -0.02em;
+            color: var(--primary-text);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .valentine-theme h1 {
+            color: var(--primary-text);
+            text-shadow: none;
+        }
+
+        h2 {
+            font-family: inherit;
+            font-size: 1.8rem;
+            color: var(--secondary-text);
+            font-weight: 500;
+            margin-bottom: 25px;
+            letter-spacing: -0.01em;
+        }
+
+        .message,
+        p {
+            font-size: 1.05rem;
+            line-height: 1.5;
+            margin-bottom: 25px;
+            color: var(--secondary-text);
+            font-weight: 400;
+        }
+
+        /* Floating Background Emojis - Slower */
+        .bg-emoji {
+            position: absolute;
+            top: -10%;
+            font-size: 2rem;
+            opacity: 0.4;
+            /* More subtle */
+            animation: floatDown 15s linear infinite;
+            /* Slower */
+            z-index: 1;
+            user-select: none;
+            pointer-events: none;
+            filter: grayscale(0.2);
+            /* Slight desaturation for taste */
+        }
+
+        @keyframes floatDown {
+            0% {
+                transform: translateY(-10vh) rotate(0deg);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 0.6;
+            }
+
+            100% {
+                transform: translateY(110vh) rotate(180deg);
+                opacity: 0;
+            }
+        }
+
+        /* Inputs on Cards */
+        .planner-box {
+            margin: 25px 0;
+            text-align: left;
+        }
+
+        .planner-box label {
+            font-size: 0.85rem;
+            font-weight: 500;
+            display: block;
+            margin-bottom: 8px;
+            color: var(--secondary-text);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .day-input {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 12px;
+            font-family: inherit;
+            outline: none;
+            font-size: 1rem;
+            transition: all 0.2s ease;
+            color: var(--primary-text);
+        }
+
+        .day-input:focus {
+            border-color: #0071e3;
+            background: #fff;
+            box-shadow: 0 0 0 4px rgba(0, 113, 227, 0.1);
+            /* Blue glow ring */
+        }
+
+        /* Navigation Buttons */
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+            gap: 15px;
+        }
+
+        .btn-nav {
+            padding: 12px 24px;
+            border-radius: 99px;
+            /* Pill */
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            font-family: inherit;
+            font-size: 0.9rem;
+        }
+
+        .next-btn {
+            background: #1d1d1f;
+            /* Black text button style */
+            color: white;
+            flex: 1;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .next-btn:active {
+            transform: scale(0.98);
+        }
+
+        .prev-btn {
+            background: transparent;
+            color: var(--secondary-text);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .prev-btn:hover {
+            background: rgba(0, 0, 0, 0.05);
+        }
+
+        /* Main Yes/No Buttons */
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 25px;
+            position: relative;
+            height: 60px;
+        }
+
+        .btn {
+            padding: 14px 32px;
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 99px;
+            cursor: pointer;
+            font-family: inherit;
+            letter-spacing: -0.01em;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn:active {
+            transform: scale(0.96);
+        }
+
+        .btn-yes {
+            background: linear-gradient(135deg, #0071e3 0%, #00c6ff 100%);
+            /* Vivid Blue */
+            box-shadow: 0 5px 15px rgba(0, 113, 227, 0.4);
+            color: white;
+        }
+
+        .btn-no {
+            background: rgba(255, 255, 255, 0.8);
+            color: var(--primary-text);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            backdrop-filter: blur(10px);
+        }
+
+        /* Floating Hearts (Proposal Page) */
+        .floating-hearts .heart {
+            position: absolute;
+            top: -20px;
+            font-size: 2rem;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .floating-hearts .heart:nth-child(1) {
+            left: 20%;
+            animation-delay: 0s;
+        }
+
+        .floating-hearts .heart:nth-child(2) {
+            left: 50%;
+            animation-delay: 1s;
+        }
+
+        .floating-hearts .heart:nth-child(3) {
+            left: 80%;
+            animation-delay: 2s;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-15px) rotate(10deg);
+            }
+
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+        }
+
+        /* Responsive & iPhone 15 Optimization */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            .glass-card {
+                padding: 25px 20px;
+                max-width: 90%;
+                margin-top: -20px;
+                /* Slight optical lift */
+            }
+
+            /* Prevent iOS Zoom on focus */
+            .day-input {
+                font-size: 16px;
+            }
+        }
+
+        /* Specific iPhone 15 Tweak (~393px width) */
+        @media screen and (max-width: 430px) {
+
+            /* Stack Proposal Buttons */
+            .buttons {
+                flex-direction: column;
+                height: auto;
+                gap: 12px;
+                margin-top: 15px;
+            }
+
+            .btn {
+                width: 100%;
+                padding: 14px 20px;
+            }
+
+            /* Larger touch targets */
+
+            /* Navigation Buttons */
+            .nav-buttons {
+                gap: 15px;
+                margin-top: 25px;
+            }
+
+            .btn-nav {
+                padding: 14px 10px;
+                /* Taller for thumbs */
+                font-size: 1rem;
+            }
+
+            /* Adjust font for tight titles */
+            h1 {
+                font-size: 2rem;
+                margin-bottom: 10px;
+            }
+
+            /* Safe Area for notch/home bar */
+            section {
+                padding-left: env(safe-area-inset-left);
+                padding-right: env(safe-area-inset-right);
+                padding-top: max(20px, env(safe-area-inset-top));
+                padding-bottom: max(20px, env(safe-area-inset-bottom));
+            }
+
+            /* Ensure emoji shower doesn't dominate */
+            .emoji-shower {
+                font-size: 1.5rem;
+                margin: 5px 0;
+            }
+        }
+
+        /* Proposal Refinements */
+        .note-card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 16px;
+            padding: 25px;
+            margin: 20px 0;
+            border: 2px dashed rgba(102, 126, 234, 0.5);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .small-note {
+            font-size: 0.9rem;
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .note-card .message {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .note-card strong {
+            color: #ff416c;
+            font-weight: 700;
+        }
+
+        .note-card em {
+            color: #667eea;
+            font-style: italic;
+        }
+
+        .big-heart {
+            font-size: 5rem;
+            display: block;
+            margin: 0 auto 20px auto;
+            animation: pulseHeart 1.5s infinite ease-in-out;
+            filter: drop-shadow(0 10px 20px rgba(255, 0, 100, 0.3));
+        }
+
+        @keyframes pulseHeart {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.15);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .gradient-text {
+            background: linear-gradient(to right, #ff416c, #ff4b2b);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 2.2rem;
+            /* Larger */
+            font-weight: 800;
+            display: inline-block;
+            margin-bottom: 25px;
+        }
+
+        .heartbeat-btn {
+            animation: heartbeat 2s infinite;
+        }
+
+        @keyframes heartbeat {
+            0% {
+                box-shadow: 0 0 0 0 rgba(0, 113, 227, 0.4);
+                transform: scale(1);
+            }
+
+            50% {
+                box-shadow: 0 0 0 15px rgba(0, 113, 227, 0);
+                transform: scale(1.05);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(0, 113, 227, 0);
+                transform: scale(1);
+            }
+        }
+
+        /* Footer Credit */
+        .made-with-love {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            font-size: 0.75rem;
+            color: rgba(0, 0, 0, 0.4);
+            font-family: inherit;
+            pointer-events: none;
+            font-weight: 500;
+            z-index: 100;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Container for all slides -->
+    <div class="main-container">
+
+        <!-- SECTION 1: PROPOSAL (The Gatekeeper) -->
+        <section id="proposal-section" class="active-section">
+            <div class="card glass-card">
+                <div class="header">
+                    <div class="floating-hearts">
+                        <span class="heart">🌸</span>
+                        <span class="heart">💖</span>
+                        <span class="heart">✨</span>
+                    </div>
+                    <h1>Hi Sejal Suda! 🎀</h1>
+                </div>
+
+                <div class="content">
+                    <p class="message">
+                        Sejal, you honestly make every boring day better just by existing. ✨<br>
+                        So I gotta ask you something important...
+                    </p>
+
+                    <div class="question-box">
+                        <span class="big-heart">❤️</span>
+                        <h2 class="gradient-text">Will you be my Valentine? 🥺</h2>
+                        <div class="buttons">
+                            <button id="yesBtn" class="btn btn-yes heartbeat-btn">Yes, I'd love to! 💖</button>
+                            <button id="noBtn" class="btn btn-no">No 🙈</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 1.2: NO RESPONSE (Playful Redirect) -->
+        <section id="no-response-section" class="hidden-section day-section no-response-theme">
+            <div class="card glass-card">
+                <h1>Wait, wait, wait... 🤨</h1>
+                <div class="content">
+                    <div class="note-card">
+                        <p class="small-note">📝 A small note for you:</p>
+                        <p class="message">
+                            You have to say <strong>YES</strong> because you don't have any other date besides Varun,
+                            and even if you have, you can't go because <em>no one can tolerate you like I do</em> 😏💕
+                        </p>
+                    </div>
+                    <button id="okayYesBtn" class="btn btn-yes heartbeat-btn">Okay, I'll say YES! ❤️</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 1.5: THANK YOU (New) -->
+        <section id="thank-you-section" class="hidden-section day-section thank-you-theme">
+            <div class="card glass-card">
+                <h1>Yay! She said YES! 🥳</h1>
+                <p class="message" style="font-size: 1.3rem;">
+                    Thank you, Sejal! You just made me the happiest person alive. ❤️<br>
+                    I promise to make not just this Valentine's, but every day special for you.
+                </p>
+                <div class="emoji-shower">🥰💑✨🥂</div>
+
+                <p style="margin-top: 20px; font-size: 1rem; color: #555;">
+                    I need your help to make this week perfect...
+                </p>
+
+                <div class="buttons">
+                    <button id="startJourneyBtn" class="btn btn-yes">Let's Decide The Plans! ➡️</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: ROSE DAY (Feb 7) -->
+        <section id="day-7" class="hidden-section day-section rose-theme">
+            <div class="card glass-card">
+                <h1>Happy Rose Day 🌹</h1>
+                <p>To the most beautiful rose in the garden... Sejal! 🥀</p>
+                <div class="emoji-shower">🌹🥀💐🌷</div>
+
+                <div class="planner-box">
+                    <label>Where should I get you flowers from?</label>
+                    <input type="text" class="day-input" data-day="7"
+                        placeholder="e.g. The little florist on Main St...">
+                </div>
+
+                <div class="nav-buttons">
+                    <button class="btn-nav next-btn" onclick="nextSection(8)">Next: Feb 8 ➡️</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: PROPOSE DAY (Feb 8) -->
+        <section id="day-8" class="hidden-section day-section propose-theme">
+            <div class="card glass-card">
+                <h1>Happy Propose Day 💍</h1>
+                <p>I propose a lifetime of happiness and crazy adventures with you! ✨</p>
+                <div class="emoji-shower">💎💍👰🤵</div>
+
+                <div class="planner-box">
+                    <label>What's your date spot?</label>
+                    <input type="text" class="day-input" data-day="8" placeholder="e.g. A romantic beach dinner...">
+                </div>
+
+                <div class="nav-buttons">
+                    <button class="btn-nav prev-btn" onclick="prevSection(7)">⬅️ Back</button>
+                    <button class="btn-nav next-btn" onclick="nextSection(9)">Next: Feb 9 ➡️</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: CHOCOLATE DAY (Feb 9) -->
+        <section id="day-9" class="hidden-section day-section chocolate-theme">
+            <div class="card glass-card">
+                <h1>Happy Chocolate Day 🍫</h1>
+                <p>You are sweeter than any chocolate in the world, Sejal! 🍬</p>
+                <div class="emoji-shower">🍫🍩🍪🍦</div>
+
+                <div class="planner-box">
+                    <label>Your favorite chocolate/dessert?</label>
+                    <input type="text" class="day-input" data-day="9" placeholder="e.g. Dark Chocolate Truffles...">
+                </div>
+
+                <div class="nav-buttons">
+                    <button class="btn-nav prev-btn" onclick="prevSection(8)">⬅️ Back</button>
+                    <button class="btn-nav next-btn" onclick="nextSection(10)">Next: Feb 10 ➡️</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: TEDDY DAY (Feb 10) -->
+        <section id="day-10" class="hidden-section day-section teddy-theme">
+            <div class="card glass-card">
+                <h1>Happy Teddy Day 🧸</h1>
+                <p>Sending you a giant, squishy bear hug! 🤗</p>
+                <div class="emoji-shower">🧸🐼🐨🦁</div>
+
+                <div class="planner-box">
+                    <label>Do you want a big teddy or a small cute one?</label>
+                    <input type="text" class="day-input" data-day="10" placeholder="e.g. Giant fluffy one!">
+                </div>
+
+                <div class="nav-buttons">
+                    <button class="btn-nav prev-btn" onclick="prevSection(9)">⬅️ Back</button>
+                    <button class="btn-nav next-btn" onclick="nextSection(11)">Next: Feb 11 ➡️</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6: PROMISE DAY (Feb 11) -->
+        <section id="day-11" class="hidden-section day-section promise-theme">
+            <div class="card glass-card">
+                <h1>Happy Promise Day 🤝</h1>
+                <p>I promise to always be your biggest fan and best friend. ❤️</p>
+                <div class="emoji-shower">🤞🤙💌🔐</div>
+
+                <div class="planner-box">
+                    <label>Your wish is my command. What should I promise?</label>
+                    <input type="text" class="day-input" data-day="11" placeholder="e.g. Always bring me coffee...">
+                </div>
+
+                <div class="nav-buttons">
+                    <button class="btn-nav prev-btn" onclick="prevSection(10)">⬅️ Back</button>
+                    <button class="btn-nav next-btn" onclick="nextSection(12)">Next: Feb 12 ➡️</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 7: HUG DAY (Feb 12) -->
+        <section id="day-12" class="hidden-section day-section hug-theme">
+            <div class="card glass-card">
+                <h1>Happy Hug Day 🤗</h1>
+                <p>Wrap your arms around me and never let go! 🫂</p>
+                <div class="emoji-shower">🫂🐵🥰💏</div>
+
+                <div class="planner-box">
+                    <label>How many hugs do you want today?</label>
+                    <input type="text" class="day-input" data-day="12" placeholder="e.g. Infinite!">
+                </div>
+
+                <div class="nav-buttons">
+                    <button class="btn-nav prev-btn" onclick="prevSection(11)">⬅️ Back</button>
+                    <button class="btn-nav next-btn" onclick="nextSection(13)">Next: Feb 13 ➡️</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 8: KISS DAY (Feb 13) -->
+        <section id="day-13" class="hidden-section day-section kiss-theme">
+            <div class="card glass-card">
+                <h1>Happy Kiss Day 💋</h1>
+                <p>Sending you a thousand kisses, my love. 😘</p>
+                <div class="emoji-shower">💋💄👄😽</div>
+
+                <div class="planner-box">
+                    <label>One kiss on the cheek or...?</label>
+                    <input type="text" class="day-input" data-day="13" placeholder="e.g. You decide... 😉">
+                </div>
+
+                <div class="nav-buttons">
+                    <button class="btn-nav prev-btn" onclick="prevSection(12)">⬅️ Back</button>
+                    <button class="btn-nav next-btn" onclick="nextSection(14)">Next: THE BIG DAY ➡️</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 9: VALENTINES DAY (Feb 14) -->
+        <section id="day-14" class="hidden-section day-section valentine-theme">
+            <div class="card glass-card">
+                <h1>Happy Valentine's Day! ❤️</h1>
+                <p>Sejal Suda, you are my forever Valentine. I love you! 🥰</p>
+                <div class="emoji-shower">❤️💖💘💝</div>
+
+                <div class="planner-box">
+                    <label>Tonight's grand plan:</label>
+                    <input type="text" class="day-input" data-day="14" placeholder="Dinner date at...">
+                </div>
+
+                <div class="nav-buttons">
+                    <button class="btn-nav prev-btn" onclick="prevSection(13)">⬅️ Back</button>
+                    <button id="saveAllBtn" class="btn btn-yes">Send Plans to You! 💌</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- "Human" Footer -->
+        <div class="made-with-love">
+            Made with all my ❤️ (and a lot of coffee) just for you.
+        </div>
+
+    </div>
+
+    <!-- Confetti Script -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script>
+        // Define global functions immediately so HTML onclicks work
+        // Hey Sejal! If you're smart enough to open the console... I LOVE YOU! ❤️ - Code by Me
+        console.log("%c Hello Sejal! 🌹", "color: #ff4d6d; font-size: 20px; font-weight: bold;");
+        console.log("I coded this whole thing just to see you smile. (Okay, maybe with a tiny bit of help, but the love is all mine!)");
+
+        // Date Access Logic
+        function checkDateAccess(targetDay) {
+            const today = new Date();
+            const currentMonth = today.getMonth(); // 0-indexed (Feb is 1)
+            const currentDate = today.getDate();
+
+            // Debug helper: Uncomment to test different dates
+            // const currentDate = 7; // Simulate Feb 7
+
+            // Target is strictly Feb 'targetDay'
+            // If it's not Feb (Month 1), assume it's locked (or if it's March, it's pas due? Let's assume strict Feb context)
+            // Actually, if it's after Feb, we should probably allow access.
+            // If month > 1, allow. If month < 1, block.
+            // If month == 1 (Feb), check date.
+
+            if (currentMonth > 1) return true; // It's March or later, allow
+            if (currentMonth < 1) {
+                alert("It's not even February yet! ⏳");
+                return false;
+            }
+
+            // It is February
+            if (currentDate >= targetDay) {
+                return true;
+            } else {
+                const daysLeft = targetDay - currentDate;
+                alert(`You can't open this yet! 🤫\nWait for Feb ${targetDay} (Coming in ${daysLeft} day${daysLeft > 1 ? 's' : ''})`);
+                return false;
+            }
+        }
+
+        // Emoji Theme Map
+        const emojiThemes = {
+            'proposal': ['💖', '🌸', '✨', '🥺'], // Page 1 Theme
+            'thankyou': ['🥳', '🎉', '🍾', '💃'], // New Thank You Theme
+            'noresponse': ['🤨', '😏', '💜', '✨'], // No Response Theme
+            7: ['🌹', '🥀', '💐', '🌷'],
+            8: ['💍', '💎', '🥂', '✨'],
+            9: ['🍫', '🍩', '🍪', '🍬'],
+            10: ['🧸', '🎀', '🤗', '✨'],
+            11: ['🤝', '🤞', '💌', '🔐'],
+            12: ['🫂', '🐵', '🥰', '💖'],
+            13: ['💋', '💄', '👄', '😽'],
+            14: ['❤️', '💘', '💝', '💑']
+        };
+
+        function createFloatingEmojis(dayId, sectionElement) {
+            // Clear existing bg-emojis in this section
+            const existing = sectionElement.querySelectorAll('.bg-emoji');
+            existing.forEach(e => e.remove());
+
+            const emojis = emojiThemes[dayId];
+            if (!emojis) return;
+
+            // Create 20 floating emojis
+            for (let i = 0; i < 20; i++) {
+                const span = document.createElement('span');
+                span.classList.add('bg-emoji');
+                span.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+
+                // Randomize
+                span.style.left = Math.random() * 100 + '%';
+                span.style.fontSize = Math.random() * 2 + 1 + 'rem'; // 1rem to 3rem
+                span.style.animationDuration = Math.random() * 5 + 5 + 's'; // 5s to 10s
+                span.style.animationDelay = Math.random() * 5 + 's';
+
+                sectionElement.appendChild(span);
+            }
+        }
+
+        window.nextSection = function (nextIdNumber) {
+            // Check Date Access first!
+            if (!checkDateAccess(nextIdNumber)) return;
+
+            // Current section number is previous
+            const currentIdNumber = nextIdNumber - 1;
+
+            // Simple logic: Hide all, Show Target
+            const allSections = document.querySelectorAll('section');
+            allSections.forEach(sec => {
+                sec.classList.remove('active-section');
+                sec.classList.add('hidden-section');
+            });
+
+            const targetId = `day-${nextIdNumber}`;
+            const targetSection = document.getElementById(targetId);
+            if (targetSection) {
+                targetSection.classList.remove('hidden-section');
+                targetSection.classList.add('active-section');
+
+                createFloatingEmojis(nextIdNumber, targetSection);
+            }
+
+            // Trigger confetti on certain milestones
+            if (nextIdNumber === 7) fireConfetti();
+            if (nextIdNumber === 14) fireConfetti();
+        };
+
+        window.prevSection = function (prevIdNumber) {
+            const allSections = document.querySelectorAll('section');
+            allSections.forEach(sec => {
+                sec.classList.remove('active-section');
+                sec.classList.add('hidden-section');
+            });
+
+            const targetId = `day-${prevIdNumber}`;
+            const targetSection = document.getElementById(targetId);
+            if (targetSection) {
+                targetSection.classList.remove('hidden-section');
+                targetSection.classList.add('active-section');
+
+                createFloatingEmojis(prevIdNumber, targetSection);
+            }
+        };
+
+        // Utils
+        function fireConfetti() {
+            if (typeof confetti !== 'undefined') {
+                confetti({
+                    particleCount: 150,
+                    spread: 100,
+                    origin: { y: 0.6 },
+                    colors: ['#ff4d6d', '#ffb3c1', '#ffffff']
+                });
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const noBtn = document.getElementById('noBtn');
+            const yesBtn = document.getElementById('yesBtn');
+
+            // INIT: Start floating emojis on Page 1 (Proposal) immediately
+            const proposalSection = document.getElementById('proposal-section');
+            if (proposalSection) {
+                createFloatingEmojis('proposal', proposalSection);
+            }
+
+            /* --- PROPOSAL LOGIC --- */
+            // No Button Redirect (removed evasive behavior)
+            if (noBtn) {
+                noBtn.addEventListener('click', () => {
+                    // Hide proposal
+                    const proposalSection = document.getElementById('proposal-section');
+                    if (proposalSection) {
+                        proposalSection.classList.remove('active-section');
+                        proposalSection.classList.add('hidden-section');
+                    }
+
+                    // Show No Response section
+                    const noResponseSection = document.getElementById('no-response-section');
+                    if (noResponseSection) {
+                        noResponseSection.classList.remove('hidden-section');
+                        noResponseSection.classList.add('active-section');
+                        createFloatingEmojis('noresponse', noResponseSection);
+                    }
+                });
+            }
+
+            // Yes Button Click -> Show Thank You (No Lock)
+            if (yesBtn) {
+                yesBtn.addEventListener('click', () => {
+                    // Hide proposal
+                    const proposalSection = document.getElementById('proposal-section');
+                    if (proposalSection) {
+                        proposalSection.classList.remove('active-section');
+                        proposalSection.classList.add('hidden-section');
+                    }
+
+                    // Show Thank You
+                    const thankYouSection = document.getElementById('thank-you-section');
+                    if (thankYouSection) {
+                        thankYouSection.classList.remove('hidden-section');
+                        thankYouSection.classList.add('active-section');
+
+                        createFloatingEmojis('thankyou', thankYouSection);
+                    }
+
+                    fireConfetti();
+                });
+            }
+
+            // Start Journey Btn -> Go to Day 7 (Locked)
+            const okayYesBtn = document.getElementById('okayYesBtn');
+            if (okayYesBtn) {
+                okayYesBtn.addEventListener('click', () => {
+                    // Hide No Response
+                    const noResponseSection = document.getElementById('no-response-section');
+                    if (noResponseSection) {
+                        noResponseSection.classList.remove('active-section');
+                        noResponseSection.classList.add('hidden-section');
+                    }
+
+                    // Show Thank You
+                    const thankYouSection = document.getElementById('thank-you-section');
+                    if (thankYouSection) {
+                        thankYouSection.classList.remove('hidden-section');
+                        thankYouSection.classList.add('active-section');
+                        createFloatingEmojis('thankyou', thankYouSection);
+                    }
+
+                    fireConfetti();
+                });
+            }
+
+            const startJourneyBtn = document.getElementById('startJourneyBtn');
+            if (startJourneyBtn) {
+                startJourneyBtn.addEventListener('click', () => {
+                    // Check if it's Feb 7 yet
+                    if (!checkDateAccess(7)) return;
+
+                    // Hide Thank You
+                    const thankYouSection = document.getElementById('thank-you-section');
+                    if (thankYouSection) {
+                        thankYouSection.classList.remove('active-section');
+                        thankYouSection.classList.add('hidden-section');
+                    }
+
+                    // Show Day 7
+                    const day7 = document.getElementById('day-7');
+                    if (day7) {
+                        day7.classList.remove('hidden-section');
+                        day7.classList.add('active-section');
+
+                        createFloatingEmojis(7, day7);
+                    }
+                });
+            }
+
+            /* --- PLANNER / SAVE LOGIC --- */
+            // Auto-save on input change
+            const inputs = document.querySelectorAll('.day-input');
+
+            // Load saved data
+            try {
+                const savedData = JSON.parse(localStorage.getItem('sejalPlans')) || {};
+                inputs.forEach(input => {
+                    const day = input.dataset.day;
+                    if (savedData[day]) {
+                        input.value = savedData[day];
+                    }
+
+                    input.addEventListener('input', (e) => {
+                        const dayKey = e.target.dataset.day;
+                        const value = e.target.value;
+
+                        try {
+                            const currentData = JSON.parse(localStorage.getItem('sejalPlans')) || {};
+                            currentData[dayKey] = value;
+                            localStorage.setItem('sejalPlans', JSON.stringify(currentData));
+                        } catch (err) {
+                            console.error("Storage failed", err);
+                        }
+                    });
+                });
+            } catch (e) {
+                console.log("Local storage not accessible");
+            }
+
+            // Final Save/Send Button
+            const saveAllBtn = document.getElementById('saveAllBtn');
+            if (saveAllBtn) {
+                saveAllBtn.addEventListener('click', () => {
+                    const savedData = JSON.parse(localStorage.getItem('sejalPlans')) || {};
+
+                    // Format the message
+                    let msg = "Hey! Here are my Valentine Week plans: 💖\n\n";
+                    msg += `🌹 Rose Day: ${savedData[7] || '(No plan)'}\n`;
+                    msg += `💍 Propose Day: ${savedData[8] || '(No plan)'}\n`;
+                    msg += `🍫 Chocolate Day: ${savedData[9] || '(No plan)'}\n`;
+                    msg += `🧸 Teddy Day: ${savedData[10] || '(No plan)'}\n`;
+                    msg += `🤝 Promise Day: ${savedData[11] || '(No plan)'}\n`;
+                    msg += `🤗 Hug Day: ${savedData[12] || '(No plan)'}\n`;
+                    msg += `💋 Kiss Day: ${savedData[13] || '(No plan)'}\n`;
+                    msg += `❤️ Valentine's Day: ${savedData[14] || '(No plan)'}\n\n`;
+                    msg += "Can't wait! 🥰";
+
+                    // Encode for URL
+                    const encodedMsg = encodeURIComponent(msg);
+
+                    // Open WhatsApp (Direct to user)
+                    window.open(`https://wa.me/8919237155?text=${encodedMsg}`, '_blank');
+
+                    fireConfetti();
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
